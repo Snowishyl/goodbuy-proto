@@ -4,8 +4,20 @@ package io.snowishyl.goodbuy.user;
 
 import "common.proto";
 
+message QueryUserInfoRequest{
+  string UserName = 1;
+
+}
+
+message QueryUserInfoResponse{
+  int64 Id = 1;
+  UserInfo UserInfo = 2;
+
+  BaseResp BaseResp = 255;
+}
+
 service UserService {
 
-  rpc EmptyCall(Empty) returns (Empty);
+  rpc QueryUserInfo (QueryUserInfoRequest) returns (QueryUserInfoResponse);
 
 }

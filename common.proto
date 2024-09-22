@@ -3,3 +3,12 @@ syntax = "proto3";
 package io.snowishyl.goodbuy;
 
 message Empty {}
+
+message BaseResp{
+  int32 RespCode = 1;
+  string RespMsg = 2;
+}
+
+message UserInfo{
+
+}
