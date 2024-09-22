@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package io.snowishyl.goodbuy.user;
+
+import "common.proto";
+
+service UserService {
+
+  rpc EmptyCall(Empty) returns (Empty);
+
+}
