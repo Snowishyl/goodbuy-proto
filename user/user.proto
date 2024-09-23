@@ -10,8 +10,7 @@ message QueryUserInfoRequest{
 }
 
 message QueryUserInfoResponse{
-  int64 Id = 1;
-  UserInfo UserInfo = 2;
+  UserInfo UserInfo = 1;
 
   BaseResp BaseResp = 255;
 }

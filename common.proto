@@ -10,5 +10,10 @@ message BaseResp{
 }
 
 message UserInfo{
-
+  int64 Role = 1;
+  string Description = 2;
+  string Name = 3;
+  string Nickname = 4;
+  string PhoneNumber = 5;
+  string Mail = 6;
 }
