@@ -53,7 +53,7 @@ message ActivityInfo {
   int64 EndTime = 3;
 }
 
-message GoodsInfo {
+message GoodInfo {
   uint64 Id = 1;
   string GoodsName = 2;
   uint64 GoodsType = 3;

@@ -4,54 +4,51 @@ package io.snowishyl.goodbuy.goods;
 
 import "common.proto";
 
-option java_package = "io.snowishyl.goodbuy.service";
-option java_multiple_files = true;
-
 // 创建商品请求
-message CreateGoodsRequest {
-  string GoodsName = 1;
-  uint64 GoodsType = 2;
+message CreateGoodRequest {
+  string GoodName = 1;
+  uint64 GoodType = 2;
   string Description = 3;
   uint64 TotalNum = 4;
 }
 
 // 创建商品响应
-message CreateGoodsResponse {
+message CreateGoodResponse {
   uint64 Id = 1;
 
   BaseResp BaseResp = 255;
 }
 
 // 查询单个商品的请求
-message GetGoodsRequest {
+message GetGoodRequest {
   uint64 Id = 1; // 商品ID
 }
 
 // 查询单个商品的响应
-message GetGoodsResponse {
-  GoodsInfo Goods = 1;
+message GetGoodResponse {
+  GoodInfo Good = 1;
   BaseResp BaseResp = 255;
 }
 
 // 查询商品列表的请求
-message ListGoodsRequest {
-  uint64 GoodsType = 1; // 可以根据商品类型筛选
+message ListGoodRequest {
+  uint64 GoodType = 1; // 可以根据商品类型筛选
   uint32 Page = 2;      // 分页页码
   uint32 PageSize = 3;  // 每页商品数
 }
 
 // 查询商品列表的响应
-message ListGoodsResponse {
-  repeated GoodsInfo GoodsList = 1;  // 返回的商品列表
+message ListGoodResponse {
+  repeated GoodInfo GoodList = 1;  // 返回的商品列表
   uint32 TotalCount = 2;             // 符合条件的总商品数
   BaseResp BaseResp = 255;
 }
 
 // 更新商品请求
-message UpdateGoodsRequest {
+message UpdateGoodRequest {
   uint64 Id = 1;                     // 商品ID
-  string GoodsName = 2;               // 更新的商品名称
-  uint64 GoodsType = 3;               // 更新的商品类型
+  string GoodName = 2;               // 更新的商品名称
+  uint64 GoodType = 3;               // 更新的商品类型
   string Description = 4;             // 更新的描述
   uint64 SaleNum = 5;                 // 已售数量
   uint64 RemainderNum = 6;            // 剩余库存
@@ -59,35 +56,35 @@ message UpdateGoodsRequest {
 }
 
 // 更新商品响应
-message UpdateGoodsResponse {
+message UpdateGoodResponse {
   BaseResp BaseResp = 255;
 }
 
 // 删除商品请求
-message DeleteGoodsRequest {
+message DeleteGoodRequest {
   uint64 Id = 1; // 商品ID
 }
 
 // 删除商品响应
-message DeleteGoodsResponse {
+message DeleteGoodResponse {
   BaseResp BaseResp = 255;
 }
 
 // 商品服务的RPC定义
-service GoodsService {
+service GoodService {
 
   // 创建商品
-  rpc CreateGoods(CreateGoodsRequest) returns (CreateGoodsResponse);
+  rpc CreateGood(CreateGoodRequest) returns (CreateGoodResponse);
 
   // 获取单个商品详情
-  rpc GetGoods(GetGoodsRequest) returns (GetGoodsResponse);
+  rpc GetGood(GetGoodRequest) returns (GetGoodResponse);
 
   // 列出商品列表（支持分页和按类型筛选）
-  rpc ListGoods(ListGoodsRequest) returns (ListGoodsResponse);
+  rpc ListGood(ListGoodRequest) returns (ListGoodResponse);
 
   // 更新商品
-  rpc UpdateGoods(UpdateGoodsRequest) returns (UpdateGoodsResponse);
+  rpc UpdateGood(UpdateGoodRequest) returns (UpdateGoodResponse);
 
   // 删除商品
-  rpc DeleteGoods(DeleteGoodsRequest) returns (DeleteGoodsResponse);
+  rpc DeleteGood(DeleteGoodRequest) returns (DeleteGoodResponse);
 }
