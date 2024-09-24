@@ -17,3 +17,48 @@ message UserInfo{
   string PhoneNumber = 5;
   string Mail = 6;
 }
+
+message OrderInfo {
+  uint64 Id = 1;
+  uint64 UserId = 2;
+  uint64 GoodsId = 3;
+  string Token = 4;
+  uint64 BusinessId = 5;
+  uint64 Success = 6;
+  int32 Num = 7;
+}
+
+message BusinessInfo {
+  uint64 Id = 1;
+  string Name = 2;
+}
+
+message ShoppingCart {
+  uint64 Id = 1;
+  uint64 GoodsId = 2;
+  uint64 UserId = 3;
+  int32 Num = 4;
+  uint64 BusinessId = 5;
+}
+
+message PriceHistory {
+  uint64 Id = 1;
+  uint64 GoodsId = 2;
+  double Price = 3;
+}
+
+message ActivityInfo {
+  uint64 Id = 1;
+  string Description = 2;
+  int64 EndTime = 3;
+}
+
+message GoodsInfo {
+  uint64 Id = 1;
+  string GoodsName = 2;
+  uint64 GoodsType = 3;
+  string Description = 4;
+  uint64 SaleNum = 5;
+  uint64 RemainderNum = 6;
+  uint64 TotalNum = 7;
+}
