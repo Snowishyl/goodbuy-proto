@@ -58,7 +58,6 @@ message GoodInfo {
   string GoodsName = 2;
   uint64 GoodsType = 3;
   string Description = 4;
-  uint64 SaleNum = 5;
-  uint64 RemainderNum = 6;
-  uint64 TotalNum = 7;
+  uint64 StoreNum = 5;
+  uint64 TotalNum = 6;
 }

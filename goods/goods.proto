@@ -50,9 +50,8 @@ message UpdateGoodRequest {
   string GoodName = 2;               // 更新的商品名称
   uint64 GoodType = 3;               // 更新的商品类型
   string Description = 4;             // 更新的描述
-  uint64 SaleNum = 5;                 // 已售数量
-  uint64 RemainderNum = 6;            // 剩余库存
-  uint64 TotalNum = 7;                // 总数量
+  uint64 StoreNum = 5;                 // 库存
+  uint64 TotalNum = 6;                // 总数量
 }
 
 // 更新商品响应
